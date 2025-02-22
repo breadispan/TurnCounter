@@ -1,6 +1,6 @@
- ETC = {} -- Main table to store addon functions and variables
+ ETC = {} -- Same Main table to store addon functions and variables
 
--- Variable to track the current turn
+-- -Same variable to track the current turn
 ETC.currentTurn = 0
 
 -- Function triggered when a player's turn starts
@@ -8,7 +8,7 @@ function ETC.OnTurnStart(_, isPlayer)
     if isPlayer then return end  -- ignoring opponent turn
     ETC.currentTurn = ETC.currentTurn + 1
     ETC.UpdateTurnDisplay()
-    d("[ExoYsTurnCounter] Player Turn: " .. ETC.currentTurn)
+    --d("[ExoYsTurnCounter] Player Turn: " .. ETC.currentTurn)--
 end
 
 -- Function triggered when the game starts (after selecting patrons)
@@ -42,7 +42,7 @@ function ETC.Initialize(event, addonName)
     --d("[ExoYsTurnCounter] UI created!") -- Debug: Confirm UI is created
 
     -- Register event to detect game start
-    --EVENT_MANAGER:RegisterForEvent("ETC_GameStart", EVENT_TRIBUTE_PLAYER_TURN_STARTED, ETC.OnGameStart) --deprecated?
+    --EVENT_MANAGER:RegisterForEvent("ETC_GameStart", EVENT_TRIBUTE_PLAYER_TURN_STARTED, ETC.OnGameStart) --deprecated where this come from?
     EVENT_MANAGER:RegisterForEvent("ETC_GameFlowState", EVENT_TRIBUTE_GAME_FLOW_STATE_CHANGE, ETC.OnGameFlowStateChange)--ExoYs solution
     
     --d("[ExoYsTurnCounter] Registered Game Start Event") --Debug: Confirm event is registered
