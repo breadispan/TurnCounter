@@ -8,7 +8,7 @@ function ETC.OnTurnStart(_, isPlayer)
     if isPlayer then return end  -- ignoring opponent turn
     ETC.currentTurn = ETC.currentTurn + 1
     ETC.UpdateTurnDisplay()
-    --d("[ExoYsTurnCounter] Player Turn: " .. ETC.currentTurn)--
+    --d("[TurnCounter] Player Turn: " .. ETC.currentTurn)--
 end
 
 -- Function triggered when the game starts (after selecting patrons)
@@ -16,13 +16,13 @@ function ETC.OnGameStart()
     ETC.currentTurn = 0 -- Reset turn count to 0 at the start of a match, fails sometimes for some reason
     ETC.UpdateTurnDisplay() -- Ensure the display is updated
     ETC_TURN_WINDOW:SetHidden(false) -- Show the turn counter UI
-    --d("[ExoYsTurnCounter] Game started! Turn counter activated.") -- Debug message
+    --d("[TurnCounter] Game started! Turn counter activated.") -- Debug message
 end
 
 -- Function triggered when the game ends
 function ETC.OnGameEnd()
     ETC_TURN_WINDOW:SetHidden(true) -- Hide the turn counter UI
-    --d("[ExoYsTurnCounter] Game ended! Turn counter deactivated.") -- Debug message
+    --d("[TurnCounter] Game ended! Turn counter deactivated.") -- Debug message
 end
 
 -- Updates the on-screen turn counter display
@@ -33,29 +33,29 @@ end
 
 -- Initializes the addon and registers required events
 function ETC.Initialize(event, addonName)
-    if addonName ~= "ExoYsTurnCounter" then return end -- Ensure this addon is being initialized
+    if addonName ~= "TurnCounter" then return end -- Ensure this addon is being initialized
 
-    --d("[ExoYsTurnCounter] Initializing addon...") -- Debug: addon starts initializing
+    --d("[TurnCounter] Initializing addon...") -- Debug: addon starts initializing
 
     -- Create UI before registering events
     ETC.CreateUI()
-    --d("[ExoYsTurnCounter] UI created!") -- Debug: Confirm UI is created
+    --d("[TurnCounter] UI created!") -- Debug: Confirm UI is created
 
     -- Register event to detect game start
     --EVENT_MANAGER:RegisterForEvent("ETC_GameStart", EVENT_TRIBUTE_PLAYER_TURN_STARTED, ETC.OnGameStart) --deprecated where this come from?
-    EVENT_MANAGER:RegisterForEvent("ETC_GameFlowState", EVENT_TRIBUTE_GAME_FLOW_STATE_CHANGE, ETC.OnGameFlowStateChange)--ExoYs solution
+    EVENT_MANAGER:RegisterForEvent("ETC_GameFlowState", EVENT_TRIBUTE_GAME_FLOW_STATE_CHANGE, ETC.OnGameFlowStateChange)-- solution
     
-    --d("[ExoYsTurnCounter] Registered Game Start Event") --Debug: Confirm event is registered
+    --d("[TurnCounter] Registered Game Start Event") --Debug: Confirm event is registered
 
     -- Register event to detect turn changes
     --EVENT_MANAGER:RegisterForEvent("ETC_TurnStart", EVENT_TRIBUTE_PLAYER_TURN_BEGINS, ETC.OnTurnStart) -- confirmed deprecated
     EVENT_MANAGER:RegisterForEvent("ETC_TurnStart", EVENT_TRIBUTE_PLAYER_TURN_STARTED, ETC.OnTurnStart)
 
-    -- d("[ExoYsTurnCounter] Registered Turn Start Event") -- Debug: Confirm event is registered
+    -- d("[TurnCounter] Registered Turn Start Event") -- Debug: Confirm event is registered
 
     -- Register event to detect game end
     EVENT_MANAGER:RegisterForEvent("ETC_GameEnd", EVENT_TRIBUTE_GAME_END, ETC.OnGameEnd)
-    --d("[ExoYsTurnCounter] Registered Game End Event") --Debug: Confirm event is registered
+    --d("[TurnCounter] Registered Game End Event") --Debug: Confirm event is registered
 end
 
 function ETC.OnGameFlowStateChange(_, flowState)
@@ -63,10 +63,10 @@ function ETC.OnGameFlowStateChange(_, flowState)
         ETC.currentTurn = 0
         ETC.UpdateTurnDisplay()
         ETC_TURN_WINDOW:SetHidden(false)  -- This actually really does show the counter
-        --d("[ExoYsTurnCounter] Game started, turn counter visible.")
+        --d("[TurnCounter] Game started, turn counter visible.")
     elseif flowState == TRIBUTE_GAME_FLOW_STATE_GAME_OVER then
         ETC_TURN_WINDOW:SetHidden(true)  -- Hide the counter after the game is finished
-        --d("[ExoYsTurnCounter] Game over, hiding turn counter.")
+        --d("[TurnCounter] Game over, hiding turn counter.")
     end
 end
 
@@ -105,5 +105,5 @@ function ETC.CreateUI()
 end
 
 -- Register the addon initialization event
---d("[ExoYsTurnCounter] Initializing addon...")
+--d("[TurnCounter] Initializing addon...")
 EVENT_MANAGER:RegisterForEvent("ETC_Initialize", EVENT_ADD_ON_LOADED, ETC.Initialize) --this always should be the last line

@@ -1,7 +1,7 @@
-# ExoYsTurnCounter
+# TurnCounter
 
 ## Description
-`ExoYsTurnCounter` is an addon for **The Elder Scrolls Online (ESO)** designed to track and display the turn count in **Tales of Tribute** games. The addon shows a floating window that counts only the player's turns, and it changes the color of the text depending on the turn number. The window appears when the game starts and hides when the game ends.
+`TurnCounter` is an addon for **The Elder Scrolls Online (ESO)** designed to track and display the turn count in **Tales of Tribute** games. The addon shows a floating window that counts only the player's turns, and it changes the color of the text depending on the turn number. The window appears when the game starts and hides when the game ends.
 
 ## Features
 - Displays a turn counter window in the middle of the screen.
@@ -17,7 +17,7 @@
 
 1. Download the addon files.
 2. Extract the files into the following directory in your ESO installation:
-Documents\Elder Scrolls Online\live\AddOns\ExoYsTurnCounter
+Documents\Elder Scrolls Online\live\AddOns\TurnCounter
 3. Enable the addon in the ESO settings under **AddOns**.
 
 ## Usage
@@ -34,7 +34,7 @@ Once the addon is installed and enabled:
 
 ## Configuration
 
-Currently, `ExoYsTurnCounter` does not have customizable settings in the menu, but you can modify the colors and turn thresholds directly in the code if needed.
+Currently, `TurnCounter` does not have customizable settings in the menu, but you can modify the colors and turn thresholds directly in the code if needed.
 
 ## Developer Notes
 
@@ -51,7 +51,7 @@ Currently, `ExoYsTurnCounter` does not have customizable settings in the menu, b
 ## Changelog
 
 ### v1.0
-- Initial release of `ExoYsTurnCounter` addon.
+- Initial release of `TurnCounter` addon.
 - Displays the turn count and changes colors based on the current turn.
 
 ## License
