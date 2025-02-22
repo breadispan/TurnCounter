@@ -1,6 +1,6 @@
 ## Title: ExoY's Turn Counter
 ## Author: breadispan 🍞 (ExoY Modified addon)
-## Version: 1.0.1
+## Version: 1.3
 ## APIVersion: 101039
 ## Description: A simple addon that tracks the number of turns in Tales of Tribute.
 ## SavedVariables: ExoYsTurnCounter

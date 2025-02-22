@@ -25,6 +25,7 @@ Documents\Elder Scrolls Online\live\AddOns\ExoYsTurnCounter
 Once the addon is installed and enabled:
 - The turn counter will appear at the start of each game.
 - The counter will display only your turns (not the opponent's).
+## To be added
 - The color of the text will change based on the current turn:
 - **White** for turns <= 10.
 - **Yellow** for turns >= 10 and < 20.
