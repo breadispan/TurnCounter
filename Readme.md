@@ -1,5 +1,10 @@
 # TurnCounter
 
+## Project Status: In Development 
+This project is **not yet complete** and may contain **bugs** or unfinished features.  
+If you encounter issues, feel free to report them in the [Issues](https://github.com/breadispan/TurnCounter/issues) section.  
+
+
 ## Description
 `TurnCounter` is an addon for **The Elder Scrolls Online (ESO)** designed to track and display the turn count in **Tales of Tribute** games. The addon shows a floating window that counts only the player's turns, and it changes the color of the text depending on the turn number. The window appears when the game starts and hides when the game ends.
 
