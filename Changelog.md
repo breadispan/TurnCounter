@@ -1,3 +1,6 @@
+# Changelog  04-19-26
+## Fixed minor bugs in border
+
 # Changelog  10-19-25
 
 ## Fixed inverted turn logic
